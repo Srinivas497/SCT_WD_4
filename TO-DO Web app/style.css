@@ -1,0 +1,115 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+.input-section, .filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-section input, .filter-section select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.input-section button, .filter-section button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.input-section button { background: #ff6f61; }
+.input-section button:hover { background: #e65a4f; }
+
+.filter-section button { background: #6c63ff; }
+.filter-section button:hover { background: #5548e7; }
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    background: #fdfdfd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#task-list li.completed {
+    background: #d4edda;
+    text-decoration: line-through;
+    color: #666;
+}
+
+.task-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 5px;
+}
+
+.task-actions .edit-btn { color: #ffc107; }
+.task-actions .delete-btn { color: #dc3545; }
+.task-actions .complete-btn { color: #28a745; }
+
+.edit-input-group {
+    display: none;
+    gap: 5px;
+    flex: 1;
+}
+
+li.editing .task-content { display: none; }
+li.editing .edit-input-group { display: flex; }
+
+li.editing .edit-input-group input {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #6c63ff;
+    border-radius: 6px;
+}
+
+li.editing .edit-input-group button {
+    background: #28a745;
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+@media (max-width: 600px) {
+    .input-section, .filter-section, #task-list li {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
